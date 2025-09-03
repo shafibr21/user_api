@@ -61,7 +61,6 @@ const StatsGrid: React.FC<StatsGridProps> = ({
     if (!containerRef.current) return;
 
     const ctx = gsap.context(() => {
-
       // Add floating animation
       cardsRef.current.forEach((card, index) => {
         if (card) {
