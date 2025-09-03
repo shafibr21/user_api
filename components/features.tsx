@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
-import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { gsap } from "gsap";
 

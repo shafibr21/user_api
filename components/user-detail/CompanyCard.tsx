@@ -105,7 +105,7 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company }) => {
           <div className="group/item">
             <p className="text-sm text-gray-400 mb-1">Catch Phrase</p>
             <p className="text-blue-400 italic group-hover/item:text-purple-400 transition-colors duration-300">
-              "{company.catchPhrase}"
+              &ldquo;{company.catchPhrase}&rdquo;
             </p>
           </div>
           <div className="group/item">

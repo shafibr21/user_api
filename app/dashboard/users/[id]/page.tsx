@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
-import { useUser, User } from "@/hooks/useUsers";
+import { useUser } from "@/hooks/useUsers";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, User as UserIcon } from "lucide-react";
 import UserHeader from "@/components/user-detail/UserHeader";
@@ -35,7 +35,7 @@ export default function UserDetailPage() {
           </div>
           <h2 className="text-2xl font-bold text-red-200">User not found</h2>
           <p className="text-red-300">
-            The user you're looking for doesn't exist.
+            The user you&apos;re looking for doesn&apos;t exist.
           </p>
           <Button
             onClick={() => router.push("/dashboard/users")}

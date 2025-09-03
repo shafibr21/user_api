@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation";
 import {
   Users,
   LayoutDashboard,
-  Search,
-  Settings,
   Menu,
   X,
 } from "lucide-react";

@@ -4,9 +4,10 @@ import React, { useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Activity, Globe, TrendingUp, Users } from "lucide-react";
 import { gsap } from "gsap";
+import { User } from "@/hooks/useUsers";
 
 interface StatsGridProps {
-  users?: any[];
+  users?: User[];
   isLoading?: boolean;
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useUsers } from "@/hooks/useUsers";
+import { useUsers, User } from "@/hooks/useUsers";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
@@ -35,7 +35,7 @@ export default function UsersPage() {
 
   const filteredUsers =
     users?.filter(
-      (u: any) =>
+      (u: User) =>
         u.name.toLowerCase().includes(search.toLowerCase()) ||
         u.email.toLowerCase().includes(search.toLowerCase()) ||
         u.username.toLowerCase().includes(search.toLowerCase())
@@ -118,7 +118,7 @@ export default function UsersPage() {
 
   // Card hover animations
   useEffect(() => {
-    cardsRef.current.forEach((card, index) => {
+    cardsRef.current.forEach((card) => {
       if (!card) return;
 
       const handleMouseEnter = () => {
@@ -276,7 +276,7 @@ export default function UsersPage() {
         ref={gridRef}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
-        {paginatedUsers.map((user: any, index: number) => (
+        {paginatedUsers.map((user: User, index: number) => (
           <Link key={user.id} href={`/dashboard/users/${user.id}`}>
             <Card
               ref={(el) => {
@@ -297,7 +297,7 @@ export default function UsersPage() {
                       <AvatarFallback className="text-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white">
                         {user.name
                           .split(" ")
-                          .map((n: any[]) => n[0])
+                          .map((n: string) => n[0])
                           .join("")}
                       </AvatarFallback>
                     </Avatar>
@@ -341,7 +341,7 @@ export default function UsersPage() {
                   </span>
                 </div>
                 <p className="text-xs text-purple-400 mt-1 italic group-hover:text-purple-300 transition-colors duration-300">
-                  "{user.company.catchPhrase}"
+                  &ldquo;{user.company.catchPhrase}&rdquo;
                 </p>
               </div>
             </Card>
